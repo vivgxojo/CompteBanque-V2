@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CompteBanque
 {
-    public  class Compte //TODO : abstract
+    public abstract class Compte //TODO : 
     {
         public long NumeroCompte { get; private set; }
         public Client Proprietaire { get; private set; }

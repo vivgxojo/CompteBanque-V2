@@ -65,9 +65,21 @@ namespace CompteBanque
 
 
         // TODO : corriger
-        public Compte OuvrirCompte()
+        public Compte OuvrirCompte(int choix)
         {
-            Compte compte = new Compte(this);
+            Compte compte = null;
+            switch (choix)
+            {
+                case 0:
+                    compte = new CompteCheque(this);
+                    break;
+                case 1:
+                    compte = new CompteEpargne(this);
+                    break ;
+                case 2:
+                    compte = new CompteCredit(this);
+                    break;
+            }
             ListeComptes.Add(compte);
             return compte;
         }

@@ -40,16 +40,16 @@
 
         <Label Content="Compte" HorizontalAlignment="Left" Margin="333,30,0,0" VerticalAlignment="Top"/>
 
-        <RadioButton Content="Chèque" HorizontalAlignment="Left" Margin="274,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.391,0.649"/>
-        <RadioButton Content="Épargne" HorizontalAlignment="Left" Margin="340,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.237,-1.512"/>
-        <RadioButton Content="Crédit" HorizontalAlignment="Left" Margin="412,71,0,0" VerticalAlignment="Top"/>
+        <RadioButton IsChecked="{Binding Path=typeComptes[0]}" GroupName="TypeCompte" Content="Chèque" HorizontalAlignment="Left" Margin="274,71,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.391,0.649"/>
+        <RadioButton IsChecked="{Binding Path=typeComptes[1]}" GroupName="TypeCompte" Content="Épargne" HorizontalAlignment="Left" Margin="340,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.237,-1.512"/>
+        <RadioButton IsChecked="{Binding Path=typeComptes[2]}" GroupName="TypeCompte" Content="Crédit" HorizontalAlignment="Left" Margin="412,71,0,0" VerticalAlignment="Top"/>
 
         <Label Content="Succ." HorizontalAlignment="Left" Margin="274,84,0,0" VerticalAlignment="Top"/>
         <Label Content="Taux" HorizontalAlignment="Left" Margin="340,84,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.73,0.579"/>
         <Label Content="Limite" HorizontalAlignment="Left" Margin="401,84,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="274,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="60"/>
-        <TextBox HorizontalAlignment="Left" Margin="338,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="58"/>
-        <TextBox HorizontalAlignment="Left" Margin="401,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="62"/>
+        <TextBox HorizontalAlignment="Left" Margin="274,110,0,0" TextWrapping="Wrap" Text="{Binding succ}" VerticalAlignment="Top" Width="60"/>
+        <TextBox HorizontalAlignment="Left" Margin="338,110,0,0" TextWrapping="Wrap" Text="{Binding taux}" VerticalAlignment="Top" Width="58"/>
+        <TextBox HorizontalAlignment="Left" Margin="401,110,0,0" TextWrapping="Wrap" Text="{Binding limite}" VerticalAlignment="Top" Width="62"/>
 
         <Button Command="{Binding commandNouveauCompte}" Content="Nouveau compte" HorizontalAlignment="Left" Margin="274,136,0,0" VerticalAlignment="Top" Width="189"/>
 

@@ -12,6 +12,16 @@ namespace CompteBanque
 {
     public class VM_Banque : INotifyPropertyChanged
     {
+        public bool[] typeComptes { get; set; } = [true, false, false];
+
+        public int choixTypeCompte { get; set; } = 0;
+
+        public string succ { get; set; }
+        public string taux { get; set; }
+        public string limite { get; set; }
+
+
+
         public ObservableCollection<Client> _lesClients;
         public ObservableCollection<Client> LesClients 
         { 
@@ -73,7 +83,7 @@ namespace CompteBanque
             LesClients = new ObservableCollection<Client>();
             client = new Client();
             clientSelect = new Client();
-            compte = new Compte(); //TODO : Corriger
+            compte = null; //TODO : Corriger
 
             commandNouveauClient = new RelayCommand(NouveauClient);
             commandNouveauCompte = new RelayCommand(NouveauCompte);
@@ -138,7 +148,7 @@ namespace CompteBanque
         {
             if (clientSelect != null)
             {
-                clientSelect.OuvrirCompte();
+                clientSelect.OuvrirCompte(Array.IndexOf(typeComptes, true));
                 MessageBox.Show("Le compte a été créé");
                 Client copie = clientSelect;
                 clientSelect = null; // forcer la mise à jour du combobox
